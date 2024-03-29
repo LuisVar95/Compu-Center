@@ -1,0 +1,31 @@
+extends ../layout/admin
+
+
+block contenido
+
+    if errores 
+        div(class="alerta contenedor")
+            each error in errores 
+                div.alerta__contenedor
+                    p.alerta__mensaje= error.msg
+
+    main.login.contenedor
+        h1.login__heading= pagina
+        form.login__formulario(method="POST" action="/auth/registro")
+            div.login__campo
+                label.login__label Nombre:
+                input.login__input(type='text', placeholder='Tu nombre' name="nombre" value= usuario ? usuario.nombre : '')
+            div.login__campo
+                label.login__label Email:
+                input.login__input(type='email', placeholder='Tu email' name="email" value= usuario ? usuario.email : '')
+            div.login__campo
+                label.login__label Password:
+                input.login__input(type='password', placeholder='Tu password' name="password")
+            div.login__campo
+                label.login__label Repetir Password:
+                input.login__input(type='password', placeholder='Repite el password' name="repetir_password")
+            div.login__submit
+                button.login__boton Crear Cuenta
+        nav.login__nav
+            a.login__nav-enlace(href='/auth/login') ¿Ya tienes una cuenta? Iniciar sesión
+            a.login__nav-enlace(href='/auth/olvide-password') ¿Olvidaste tu contraseña? Recuperar

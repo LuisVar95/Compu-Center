@@ -1,0 +1,15 @@
+extends ../layout/pagina
+
+block contenido 
+    section.productos.contenedor
+        div.productos__acciones
+            h2.productos__heading= pagina
+        div.productos__contenido.contenedor
+            each producto in productos
+                a.productos__enlace
+                    div.productos__campo
+                        img.productos__imagen(src=`/uploads/${producto.imagen}`)
+                        p.productos__nombre= producto.nombre
+                        p.productos__descripcion= producto.descripcion
+                        p.productos__precio= producto.precio
+                        input.productos__boton(type="submit", value="Agregar al carrito")

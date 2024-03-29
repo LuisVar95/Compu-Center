@@ -1,0 +1,70 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.hero {
+    background-image: url('/img/hero4.jpg');
+    position: relative;
+    height: 80rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &::before {
+        content: '';
+        background-color: v.$negro;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .6;
+    }
+
+    &__contenido {
+        position: relative;
+        color: v.$blanco;
+       
+        h2 {
+            font-size: 5.2rem;
+            font-weight: 900;
+            color: v.$blanco;
+        }
+
+
+    }
+
+    &__informacion {
+        padding-top: 30rem;
+        text-align: center;
+
+        @include m.tablet {
+            text-align: left;
+        }
+    }
+
+    &__texto {
+        color: v.$blanco;
+        font-size: 1.8rem;
+        font-weight: 900;
+    }
+
+    &__boton {
+        @include m.boton (v.$azulClaro, v.$blanco);
+        text-transform: uppercase;
+    }
+
+}
+
+.descuento {
+    background-color: v.$grisOscuro;
+    padding: .6rem;
+
+    &__contenido {
+        text-align: center;
+
+        p {
+            margin: 0;
+            color: v.$blanco;
+        }
+    }
+}

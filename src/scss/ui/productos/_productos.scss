@@ -1,0 +1,164 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.productos {
+    background-color: v.$gris;
+    margin-bottom: v.$separacion;
+
+    &__acciones {
+        position: relative;
+        left: 13.2rem;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: v.$separacion;
+        align-items: start;
+        margin-top: v.$separacion;
+
+        @include m.tablet {
+            left: 10rem;
+            margin-top: calc(v.$separacion * 2);
+        }
+    }
+
+    &__boton-crear {
+        margin-bottom: 2rem;
+        width: 17rem;
+        border: none;
+        padding: 1.5rem 2rem 1.5rem 2rem;
+        background-color: v.$azulClaro;
+        color: v.$blanco;
+        font-weight: bold;
+        transition-property: background-color;
+        transition-duration: .3s;
+
+        &:hover {
+            background-color: darken($color: v.$azulClaro, $amount: 10%);
+        }
+    }
+
+    &__contenido {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        align-items: center;
+        row-gap: v.$separacion;
+        border-bottom-left-radius: 1rem;
+
+        @include m.tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include m.desktop {
+            grid-template-columns: repeat(3, 2fr);
+        }
+    }
+
+    &__heading {
+        font-weight: 900;
+        margin-bottom: v.$separacion;
+        width: 40rem;
+
+        @include m.tablet {
+            width: auto;
+        }
+    }
+
+    &__enlace {
+
+        &:hover {
+            cursor: pointer;
+        
+        }
+    }
+
+    &__nombre {
+        text-align: center;
+        font-weight: bold;
+        color: v.$textGray;
+    }
+
+    &__campo {
+        background-color: v.$blanco;
+        border-bottom-left-radius: 1.8rem;
+        border-bottom-right-radius: 1.8rem;
+    }
+
+    &__descripcion {
+        padding: .8rem;
+        font-size: 1.33rem;
+        max-width: 29.5rem;
+        text-align: center;
+        color: v.$textGray;
+    }
+
+    &__imagen {
+        max-width: 30rem;
+    }
+
+    &__icono {
+        width: 4rem;
+        color: v.$blanco;
+    }
+
+    &__precio {
+        text-align: center;
+        color: red;
+        font-weight: bold;
+    }
+
+    &__boton {
+        width: 100%;
+        padding: 2rem;
+        border: none;
+        border-bottom-left-radius: .6rem;
+        border-bottom-right-radius: .6rem;
+        font-weight: bold;
+        background-color: v.$blanco;
+        text-transform: uppercase;
+        color: v.$textGray;
+        transition-property: background-color;
+        transition-duration: .3s;
+        
+        &:hover {
+            background-color: v.$gris;
+            cursor: pointer;
+        }
+
+        &--editar {
+            width: 100%;
+            padding: 2rem;
+            border: none;
+            font-weight: bold;
+            background-color: lighten($color: v.$azulClaro, $amount: 20%);
+            text-transform: uppercase;
+            color: v.$blanco;
+            transition-property: background-color;
+            transition-duration: .3s;
+
+            &:hover {
+                background-color: lighten($color: v.$azulClaro, $amount: 2%);
+                color: v.$blanco;
+                cursor: pointer;
+            }
+        }
+
+        &--eliminar {
+            width: 100%;
+            padding: 2rem;
+            border: none;
+            border-bottom-left-radius: .6rem;
+            border-bottom-right-radius: .6rem;
+            font-weight: bold;
+            background-color: lighten($color: red, $amount: 20%);
+            text-transform: uppercase;
+            color: v.$blanco;
+            transition-property: background-color;
+            transition-duration: .3s;
+
+            &:hover {
+                background-color: lighten($color: rgb(207, 30, 30), $amount: 2%);
+                cursor: pointer;
+            }
+        }
+    }
+}

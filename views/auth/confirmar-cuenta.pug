@@ -1,0 +1,11 @@
+extends ../layout/admin
+
+block contenido 
+    main.login.contenedor
+    h1.login__heading= pagina
+
+    div.confirma.contenedor   
+        p(class= error ? 'confirma__rojo' : 'confirma__verde')= mensaje
+
+        if !error
+            a(href="/auth/login" class="confirma__enlace") iniciar sesion

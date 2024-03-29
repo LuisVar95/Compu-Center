@@ -1,0 +1,24 @@
+extends ../layout/admin
+
+block contenido 
+    section.productos.contenedor
+        div.productos__acciones
+            h2.productos__heading= pagina
+            a(href="/admin")
+                input.productos__boton-crear(type="button", value="Regresar")
+            a(href="/admin/productos")
+                input.productos__boton-crear(type="button", value="Nuevo Producto")
+        div.productos__contenido.contenedor
+            each producto in productos
+                a.productos__enlace
+                    div.productos__campo
+                        img.productos__imagen(src=`/uploads/${producto.imagen}`)
+                        p.productos__nombre= producto.nombre
+                        p.productos__descripcion= producto.descripcion
+                        p.productos__precio= producto.precio
+                        input.productos__boton--editar(type="button", value="Editar" onclick=`window.location='/admin/productos/editar/${producto.id}'`) 
+                        form(action=`/admin/productos/eliminar/${producto.id}` method="POST")
+                            input.productos__boton--eliminar(type="submit", value="Eliminar")
+
+
+

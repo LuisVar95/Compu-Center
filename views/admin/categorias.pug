@@ -1,0 +1,14 @@
+extends ../layout/admin
+
+block contenido 
+    main.categorias.mt-separacion
+        .contenedor.categorias__contenido-principal
+            h2 Comienza eligiendo una categoria:
+        .categorias__contenido.contenedor
+
+            each categoria in categorias
+                a.categorias__enlace(href=`/admin/categoria/${categoria.id}`)
+                    .categorias__campo
+                        img.categorias__imagen(src="/img/audifonos.jpg")
+                        p.categorias__descripcion Encuentra las mejores marcas de audifonos como X-PRO, Logitech, Hiper-X entre otras marcas...
+                        input(type="submit" class="categorias__boton" value=`${categoria.nombre}`)

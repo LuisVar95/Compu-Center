@@ -1,0 +1,71 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.seguridad {
+    margin-top: v.$separacion;
+
+}
+
+.pagos-seguros {
+    background-color: v.$grisOscuro;
+    padding: 20rem 0;
+    position: relative;
+    margin: 10rem 0;
+    overflow: hidden;
+    min-height: 90rem;
+
+    &::before, &::after {
+        background-color: v.$gris;
+        content: '';
+        height: 20rem;
+        width: 120%;
+        position: absolute;
+    }
+
+    &::before {
+        top: -10rem;
+        left: 0;
+        transform: rotate(3deg);
+    }
+
+    &::after {
+        bottom: -10rem;
+        left: 0;
+        transform: rotate(-3deg);
+    }
+
+    h2 {
+        position: relative;
+        left: 7.5rem;
+        bottom: 5rem;
+        font-weight: 900;
+        color: v.$blanco;
+   }
+
+   &__flex {
+        display: flex;
+        flex-direction: column;
+        margin-top: v.$separacion;
+        gap: calc(v.$separacion * 3);
+
+        @include m.tablet {
+            flex-direction: row;
+        }
+   }
+
+   &__campo {
+    background-color: v.$blanco;
+    border-radius: .5rem;
+   }
+
+   &__texto{
+    color: v.$textGray;
+    margin-top: 4.5rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+   }
+
+   &__imagen {
+        width: 80%;
+   }
+}

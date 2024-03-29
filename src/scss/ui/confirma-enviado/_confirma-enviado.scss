@@ -1,0 +1,38 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.confirma {
+    margin-top: calc(v.$separacion * 2);
+    margin-bottom: calc(v.$separacion * 2);
+
+    &__rojo {
+        background-color: rgb(185, 16, 16);
+        padding: 1rem;
+        text-align: center;
+        color: v.$blanco;
+        font-weight: bold;
+    }
+    &__verde {
+        background-color: green;
+        padding: 1rem;
+        text-align: center;
+        color: v.$blanco;
+        font-weight: bold;       
+    }
+    &__enlace {
+        font-weight: 700;
+        margin-top: 6rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+    }
+}
+
+.creada-correcta {
+    margin-top: calc(v.$separacion * 2);
+    margin-bottom: calc(v.$separacion * 2);
+    background-color: green;
+    padding: 1rem;
+    color: v.$blanco;
+}

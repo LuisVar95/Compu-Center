@@ -1,0 +1,87 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.testimoniales {
+    background-color: v.$grisOscuro;
+    padding-bottom: v.$separacion;
+
+    &__heading {
+        text-align: center;
+        font-weight: 900;
+        color: v.$blanco;
+        padding-top: v.$separacion;
+    }
+
+    &__grid {
+        margin-top: v.$separacion;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: v.$separacion;
+
+        @include m.tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__campo {
+        background-color: v.$blanco;
+        padding: 2rem 5rem;
+        border-radius: 1rem;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__nombre {
+        position: relative;
+        right: 10rem;
+    }
+
+    &__comentario {
+        position: relative;
+
+        &::before {
+            content: '';
+            background-image: url('/build/img/comillas.png');
+            background-size: 3rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            top: 3.5rem;
+            left: 2rem;
+        }
+    }
+}
+
+.testimonial {
+    
+    &__flex {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__comentario {
+        font-size: 1.6rem;
+        color: v.$textGray;
+    }
+
+    &__nombre {
+        color: v.$grisOscuro;
+        font-weight: bold;
+    }
+
+    &__comillas-contenido {
+        position: relative;
+        top: 3rem;
+        right: 4rem;
+    }
+
+    &__comillas {
+        min-width: 3rem;
+        max-width: 3rem;
+        filter: invert(60%);
+    }
+}

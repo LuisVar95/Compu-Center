@@ -1,0 +1,133 @@
+extends ../layout/pagina
+
+block contenido
+    section.descuento
+        div.descuento__contenido.contenedor
+            p Obtén 20% de descuento en la compra de tu segundo articulo al comprar los X-PRO
+    main.categorias
+        h2.contenedor Categorias
+        div.categorias__contenido.contenedor
+            each categoria in categorias
+                a.categorias__enlace(href=`/categoriaApp/${categoria.id}`)
+                    div.categorias__campo
+                        img.categorias__imagen(src="/img/audifonos.jpg")
+                        p.categorias__descripcion Encuentra las mejores marcas de audifonos como X-PRO, Logitech, Hiper-X entre otras marcas...
+                        input.categorias__boton(type="submit", value=categoria.nombre)
+    section.seguridad
+        div.pagos-seguros
+            h2.contenedor Tus pagos estan asegurados
+            div.pagos-seguros__flex.contenedor
+                div
+                    div.pagos-seguros__campo
+                        p.pagos-seguros__texto Tus pagos estan asegurados al comprar dentro de nuestra web o nuestra aplicion para android y IOS
+                    div.pagos-seguros__campo
+                        p.pagos-seguros__texto Tus pagos estan asegurados al comprar dentro de nuestra web o nuestra aplicion para android y IOS
+                    div.pagos-seguros__campo
+                        p.pagos-seguros__texto Tus pagos estan asegurados al comprar dentro de nuestra web o nuestra aplicion para android y IOS
+                div
+                    img.pagos-seguros__imagen(src="/img/seguridad.png", alt="Imagen Seguridad")
+    section.contenedor
+        div.iconos
+            div.iconos__campo
+                img.iconos__imagen(src="/img/icono-sonido.svg", alt="imagen icono")
+                h3.iconos__heading Gran Sonido
+                p.iconos__texto Nuestros audifonos X-PRO es un producto diseñados por nuestros mejores ingenieros. el sonida es de alta gama y se nota con solo usarlos.
+            div.iconos__campo
+                img.iconos__imagen(src="/img/icono-garantia.svg", alt="imagen icono")
+                h3.iconos__heading Garantia de por Vida
+                p.iconos__texto Nos encargamos de vender los productos de mejor calidad, todos los productos que compres tendran una garantia de por vida, conserva tu ticket de compra.
+            div.iconos__campo
+                img.iconos__imagen(src="/img/icono-bateria.svg", alt="imagen icono")
+                h3.iconos__heading Envios Rapidos
+                p.iconos__texto Por que sabemos que lo mas importante es de una tienda en linea es la velocidad de envios, contamos con un servicio de envios rapidos. sin costo extra.
+    section.zona-envios
+        div.envios
+            h2.contenedor Envios a toda la república
+            div.envios__flex.contenedor
+                div
+                    div.envios__campo
+                        p.envios__texto Inicia sesion para que comiences a realizar tus pedidos en linea
+                    div.envios__campo
+                        p.envios__texto Tenemos envios a toda la republica mexicana, y contamos un 4 surcursales. puedes consultarlas en la pagina web: <span>http://www.compucenter.com.mx/surcursales</span>
+                    div.envios__campo
+                        p.envios__texto Recibe un codigo para que puedas rastrear y estar al tanto de lo que pasa con tu envio
+                div
+                    img.envios__imagen(src="/img/envios.png", alt="Imagen Seguridad")
+    section.descuentos
+        h2.contenedor 20% de descuento
+        div.descuentos__contenido.contenedor
+            a.descuentos__enlace
+                div.descuentos__campo
+                    img.descuentos__imagen(src="/img/X-PRO.jpg")
+                    p.descuentos__descripcion Audifonos X-PRO, modelo 2024. Con cable y en color negro, rojo o azul
+                    input.descuentos__boton(type="submit", value="Audifonos X-PRO")
+            a.descuentos__enlace
+                div.descuentos__campo
+                    img.descuentos__imagen(src="/img/X-PRO.jpg")
+                    p.descuentos__descripcion Audifonos X-PRO, modelo 2024. Con cable y en color negro, rojo o azul
+                    input.descuentos__boton(type="submit", value="Audifonos X-PRO")
+            a.descuentos__enlace
+                div.descuentos__campo
+                    img.descuentos__imagen(src="/img/X-PRO.jpg")
+                    p.descuentos__descripcion Audifonos X-PRO, modelo 2024. Con cable y en color negro, rojo o azul
+                    input.descuentos__boton(type="submit", value="Audifonos X-PRO")
+            a.descuentos__enlace
+                div.descuentos__campo
+                    img.descuentos__imagen(src="/img/X-PRO.jpg")
+                    p.descuentos__descripcion Audifonos X-PRO, modelo 2024. Con cable y en color negro, rojo o azul
+                    input.descuentos__boton(type="submit", value="Audifonos X-PRO")
+            a.descuentos__enlace
+                div.descuentos__campo
+                    img.categorias__imagen(src="/img/X-PRO.jpg")
+                    p.descuentos__descripcion Audifonos X-PRO, modelo 2024. Con cable y en color negro, rojo o azul
+                    input.descuentos__boton(type="submit", value="Audifonos X-PRO")
+            a.descuentos__enlace
+                div.descuentos__campo
+                    img.descuentos__imagen(src="/img/X-PRO.jpg")
+                    p.descuentos__descripcion Audifonos X-PRO, modelo 2024. Con cable y en color negro, rojo o azul
+                    input.descuentos__boton(type="submit", value="Audifonos X-PRO")
+    section.testimoniales
+        h3.testimoniales__heading Testimoniales
+        div.testimoniales__grid.contenedor
+            div.testimoniales__campo
+                div.testimonial
+                    div.testimonial__comillas-contenido
+                        img.testimonial__comillas(src="/img/comillas.png", alt="comillas")
+                    p.testimonial__comentario Los productos son de muy buena calidad, ademas el trato es muy agradable por parte del servicio de whatsapp. los envios son muy rapidos y valoramos mucho eso nosotros como clientes.
+                    div.testimonial__flex
+                        p.testimonial__nombre - Luis vargas
+            div.testimoniales__campo
+                div.testimonial
+                    div.testimonial__comillas-contenido
+                        img.testimonial__comillas(src="/img/comillas.png", alt="comillas")
+                    p.testimonial__comentario Los productos son de muy buena calidad, ademas el trato es muy agradable por parte del servicio de whatsapp. los envios son muy rapidos y valoramos mucho eso nosotros como clientes.
+                    div.testimonial__flex
+                        p.testimonial__nombre - Luis vargas
+            div.testimoniales__campo
+                div.testimonial
+                    div.testimonial__comillas-contenido
+                        img.testimonial__comillas(src="/img/comillas.png", alt="comillas")
+                    p.testimonial__comentario Los productos son de muy buena calidad, ademas el trato es muy agradable por parte del servicio de whatsapp. los envios son muy rapidos y valoramos mucho eso nosotros como clientes.
+                    div.testimonial__flex
+                        p.testimonial__nombre - Luis vargas
+            div.testimoniales__campo
+                div.testimonial
+                    div.testimonial__comillas-contenido
+                        img.testimonial__comillas(src="/img/comillas.png", alt="comillas")
+                    p.testimonial__comentario Los productos son de muy buena calidad, ademas el trato es muy agradable por parte del servicio de whatsapp. los envios son muy rapidos y valoramos mucho eso nosotros como clientes.
+                    div.testimonial__flex
+                        p.testimonial__nombre - Luis vargas
+            div.testimoniales__campo
+                div.testimonial
+                    div.testimonial__comillas-contenido
+                        img.testimonial__comillas(src="/img/comillas.png", alt="comillas")
+                    p.testimonial__comentario Los productos son de muy buena calidad, ademas el trato es muy agradable por parte del servicio de whatsapp. los envios son muy rapidos y valoramos mucho eso nosotros como clientes.
+                    div.testimonial__flex
+                        p.testimonial__nombre - Luis vargas
+            div.testimoniales__campo
+                div.testimonial
+                    div.testimonial__comillas-contenido
+                        img.testimonial__comillas(src="/img/comillas.png", alt="comillas")
+                    p.testimonial__comentario Los productos son de muy buena calidad, ademas el trato es muy agradable por parte del servicio de whatsapp. los envios son muy rapidos y valoramos mucho eso nosotros como clientes.
+                    div.testimonial__flex
+                        p.testimonial__nombre - Luis vargas

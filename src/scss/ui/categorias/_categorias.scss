@@ -1,0 +1,111 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.categorias {
+    padding-top: v.$separacion;
+    background-color: v.$gris;
+
+    &__contenido-principal {
+        margin-bottom: v.$separacion;
+    }
+
+    &__acciones {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__boton-crear {
+        @include m.boton(v.$azulClaro, v.$blanco)
+    }
+
+    &__contenido {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        align-items: center;
+        row-gap: v.$separacion;
+        border-bottom-left-radius: 1rem;
+
+        @include m.tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include m.desktop {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__enlace {
+
+        &:hover {
+            cursor: pointer;
+        
+        }
+    }
+
+    &__campo {
+        background-color: v.$blanco;
+        border-bottom-left-radius: 1.8rem;
+        border-bottom-right-radius: 1.8rem;
+    }
+
+    &__descripcion {
+        padding: .8rem;
+        font-size: 1.33rem;
+        max-width: 29.5rem;
+        text-align: center;
+        color: v.$textGray;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: v.$separacion;
+        font-weight: 900;
+        position: relative;
+
+        @include m.tablet {
+            text-align: left;
+            left: 7.5rem;
+        }
+    }
+
+    &__imagen {
+        max-width: 30rem;
+    }
+
+    &__icono {
+        width: 4rem;
+        color: v.$blanco;
+    }
+
+    &__precio {
+        text-align: center;
+        color: lighten($color: red, $amount: 30%);
+    }
+
+    &__boton {
+        width: 100%;
+        padding: 2rem;
+        border: none;
+        border-bottom-left-radius: .6rem;
+        border-bottom-right-radius: .6rem;
+        font-weight: bold;
+        background-color: v.$blanco;
+        text-transform: uppercase;
+        color: v.$textGray;
+        transition-property: background-color;
+        transition-duration: .3s;
+        
+        &:hover {
+            background-color: v.$gris;
+            cursor: pointer;
+        }
+    }
+
+    &__nombre-producto {
+        font-size: 2rem;
+        text-align: center;
+        margin-top: .5rem;
+        color: v.$textGray;
+    }
+}

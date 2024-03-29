@@ -1,0 +1,141 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+    
+    &__navegacion {
+        padding: 2rem 8rem 2rem 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: v.$grisOscuro;
+
+        @include m.tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__nav {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        font-size: 2.3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        a {
+            color: v.$blanco;
+            transition-property: color;
+            transition-duration: .3s;
+
+            &:hover {
+                color: darken($color: v.$azulClaro, $amount: 15);
+                cursor: pointer;
+            }
+        }
+        @include m.tablet {
+            font-size: 1.7rem;
+            margin-bottom: 0;
+            gap: 3rem;
+            flex-direction: row;
+            margin-top: 0;
+            text-transform: none;
+        }
+    }
+
+    &__degradado {
+        margin-top: v.$separacion;
+        color: transparent;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 4rem;
+        cursor: pointer;
+        background: linear-gradient(to right, v.$verdeLima -55%, v.$azulClaro 100% );
+        background-clip: text;
+
+        @include m.tablet {
+            color: transparent;
+            font-size: 6rem;
+            margin-top: 0;
+            background: linear-gradient(to right, v.$verdeLima -20%, v.$azulClaro 100%, );
+            background-clip: text;
+        }
+
+        @include m.desktop {
+            color: transparent;
+            font-size: 6rem;
+            margin-top: 0;
+            background: linear-gradient(to right, v.$verdeLima -60%, v.$azulClaro 100%, );
+            background-clip: text;
+        }
+    }
+
+    &__contenido-icono-login {
+        position: relative;
+        left: 2.2rem;
+        top: 2rem;
+
+        @include m.tablet {
+            left: 2.2rem;
+            top: 0;
+        }
+
+        @include m.desktop {
+            left: 2.2rem;
+            top: 0;
+        }
+    }
+
+    &__contenido-icono-registro {
+        position: relative;
+        left: 2.6rem;
+        bottom: .5rem;
+        top: 2rem;
+
+        @include m.tablet {
+            left: 2.6rem;
+            bottom: .5rem;
+            top: -.5rem;
+        }
+
+        @include m.desktop {
+            left: 2.6rem;
+            bottom: 5rem;         
+        }
+    }
+
+    &__icono-login {
+        display: none;
+        filter: invert(100%);
+
+        @include m.tablet {
+            display: block;
+            max-width: 1.9rem;
+            min-width: 1.9rem;
+        }
+
+        @include m.desktop {
+            display: block;
+            max-width: 1.9rem;
+            min-width: 1.9rem;
+        }
+    }
+    &__icono-registro {
+        display: none;
+        filter: invert(100%);
+
+        @include m.tablet {
+            display: block;
+            max-width: 2.99rem;
+            min-width: 2.99rem;
+        }
+
+        @include m.desktop {
+            display: block;
+            max-width: 2.99rem;
+            min-width: 2.99rem;
+        }
+    }
+}

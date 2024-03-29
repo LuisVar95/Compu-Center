@@ -1,0 +1,25 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.alerta {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-top: v.$separacion;
+    align-items: center;
+
+    &__contenedor {
+        background-color: rgb(185, 16, 16);
+        width: 60%;
+        
+    }
+
+    &__mensaje {
+        color: v.$blanco;
+        padding: .8rem 3rem;
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+    }
+}

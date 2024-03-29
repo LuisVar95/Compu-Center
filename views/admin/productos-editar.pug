@@ -1,0 +1,37 @@
+extends ../layout/admin
+
+block contenido 
+    main.contenedor.crear
+        h2.crear__heading= pagina
+        a(href="/admin")
+            input.crear__boton-regresar(type="button", value="Regresar")
+
+        form.crear__formulario(method="POST" enctype="multipart/form-data")
+            div.crear__campo
+                label.crear__label Nombre:
+                input(type="text", placeholder="Nombre de tu producto", class="login__input" name="nombre" value=producto.nombre)
+
+            div.crear__campo
+                label.crear__label Precio:
+                input(type="number", placeholder="Precio de tu producto", class="login__input" name="precio" value=producto.precio)
+
+            div.crear__campo
+                label.crear__label Descripcion:
+                textarea(type="text", placeholder="Descripcion de tu producto", class="login__input", rows="8" name="descripcion" value=producto.descripcion)= producto.descripcion
+
+            div.crear__campo
+                label.crear__label Elige una categoria:
+                select.crear__select(name="categoriaId" value=producto.categoria)
+                    option(for="crear__option", class="for") - Seleccionar -
+                    each categoria in categorias
+                        option.crear__option(value=categoria.id selected=categoria.id === producto.categoriaId)= categoria.nombre
+                    
+            div.crear__campo
+                label.crear__label Imagen
+                input(type="file", class="crear__input", name="imagen")
+
+            div.crear__campo
+                label.crear__label Imagen actual: 
+                img.crear__imagen(src=`/uploads/${producto.imagen}`)
+            div.crear__submit
+                button.crear__boton Actualizar Producto
